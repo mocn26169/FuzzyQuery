@@ -1,0 +1,2 @@
+# FuzzyQuery
+init
