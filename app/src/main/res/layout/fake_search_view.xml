@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EditText xmlns:android="http://schemas.android.com/apk/res/android"
+          android:id="@+id/wrapped_search"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@null"
+          android:hint="输入车牌号快速查询"
+          android:padding="10dp"
+          android:cursorVisible="true"
+          android:focusable="true"
+          android:textCursorDrawable="@null"
+          android:inputType="text"
+          android:textColorHint="#9E9E9E"
+/>
