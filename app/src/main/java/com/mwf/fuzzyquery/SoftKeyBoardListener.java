@@ -7,8 +7,12 @@ import android.view.ViewTreeObserver;
 
 public class SoftKeyBoardListener {
 
-    private View rootView;//activity的根视图
-    int rootViewVisibleHeight;//纪录根视图的显示高度
+    //activity的根视图
+    private View rootView;
+
+    //纪录根视图的显示高度
+    int rootViewVisibleHeight;
+
     private OnSoftKeyBoardChangeListener onSoftKeyBoardChangeListener;
 
     public SoftKeyBoardListener(Activity activity) {
@@ -24,7 +28,7 @@ public class SoftKeyBoardListener {
                 rootView.getWindowVisibleDisplayFrame(r);
 
                 int visibleHeight = r.height();
-                System.out.println("" + visibleHeight);
+//                System.out.println("" + visibleHeight);
                 if (rootViewVisibleHeight == 0) {
                     rootViewVisibleHeight = visibleHeight;
                     return;

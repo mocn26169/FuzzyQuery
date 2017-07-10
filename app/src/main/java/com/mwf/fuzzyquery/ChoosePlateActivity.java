@@ -44,6 +44,7 @@ public class ChoosePlateActivity extends AppCompatActivity implements FakeSearch
         setContentView(R.layout.activity_choose_plate);
 
         ButterKnife.bind(this);
+        //初始化键盘
         inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
         fakeSearchView.setOnSearchListener(this);
@@ -52,13 +53,11 @@ public class ChoosePlateActivity extends AppCompatActivity implements FakeSearch
         SoftKeyBoardListener.setListener(ChoosePlateActivity.this, new SoftKeyBoardListener.OnSoftKeyBoardChangeListener() {
             @Override
             public void keyBoardShow(int height) {
-//                Toast.makeText(ChoosePlateActivity.this, "键盘显示 高度" + height, Toast.LENGTH_SHORT).show();
                 mEditText.requestFocus();
             }
 
             @Override
             public void keyBoardHide(int height) {
-//                Toast.makeText(ChoosePlateActivity.this, "键盘隐藏 高度" + height, Toast.LENGTH_SHORT).show();
                 mEditText.clearFocus();
 
             }
@@ -79,6 +78,7 @@ public class ChoosePlateActivity extends AppCompatActivity implements FakeSearch
     CarAdapter.OnViewClickListener mViewClickListener = new CarAdapter.OnViewClickListener() {
         @Override
         public void OnItemClick(View view, VehDataBean bean) {
+            //隐藏键盘
             inputMethodManager.hideSoftInputFromWindow(mEditText.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
             Intent intent = new Intent();
             intent.putExtra("VehDataBean", bean);
@@ -126,6 +126,7 @@ public class ChoosePlateActivity extends AppCompatActivity implements FakeSearch
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_cancel:
+                //隐藏键盘
                 inputMethodManager.hideSoftInputFromWindow(mEditText.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                 finish();
                 break;
@@ -134,6 +135,7 @@ public class ChoosePlateActivity extends AppCompatActivity implements FakeSearch
 
     @Override
     protected void onDestroy() {
+        //隐藏键盘
         inputMethodManager.hideSoftInputFromWindow(mEditText.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         super.onDestroy();
     }
