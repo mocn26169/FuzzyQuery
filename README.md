@@ -1,11 +1,11 @@
-#仿微信模糊查询
+# 仿微信模糊查询
 
 *  可对列表数据进行模糊查询
 *  添加人性化功能：进入界面时EditText不自动弹出键盘，键盘收起的时候隐藏光标，键盘打开的时候退出界面隐藏键盘
 
 ![这里写图片描述](http://img.blog.csdn.net/20170710094016873?aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaXJvbWtvZWFy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
-####1、进入界面时EditText不自动弹出键盘
+#### 1、进入界面时EditText不自动弹出键盘
 
 EditText添加属性：
 ```
@@ -18,7 +18,7 @@ android:focusable="true"
 android:focusableInTouchMode="true"
 ```
 
-####2、键盘收起的时候隐藏光标，键盘打开的时候退出界面隐藏键盘
+#### 2、键盘收起的时候隐藏光标，键盘打开的时候退出界面隐藏键盘
 
 创建监听键盘的Listener，SoftKeyBoardListener：
 ```
